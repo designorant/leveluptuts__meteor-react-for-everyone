@@ -1,4 +1,3 @@
-import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -9,7 +8,3 @@ class App extends React.Component {
     );
   }
 }
-
-Meteor.startup(() => {
-  ReactDOM.render(<App />, document.getElementById('app'));
-});
