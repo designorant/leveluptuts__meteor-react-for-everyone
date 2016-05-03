@@ -6,7 +6,21 @@ import ResolutionSingle from './ResolutionSingle.jsx';
 
 Resolutions = new Mongo.Collection('resolutions');
 
-export default class ResolutionsWrapper extends TrackerReact(React.Component) { // TODO: Find out whether TrackerReact is actually needed/useful for pulling data
+export default class ResolutionsWrapper extends TrackerReact(React.Component) {
+
+  constructor() {
+    super();
+
+    this.state = {
+      subscription: {
+        resolutions: Meteor.subscribe('allResolutions'), // This works thanks to TrackerReact
+      },
+    };
+  }
+
+  componentWillUnmount() {
+    this.state.subscription.resolutions.stop();
+  }
 
   resolutions() {
     return Resolutions.find().fetch();
