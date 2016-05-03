@@ -16,5 +16,18 @@
     "node": true,
     "meteor": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:meteor/recommended", "airbnb"]
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:meteor/recommended"
+  ],
+  "rules": {
+    "meteor/eventmap-params": [
+      2, { "templateInstanceParamName": "instance" }
+    ],
+    "import/no-unresolved": [
+      2, { "ignore": ["^meteor/"] }
+    ]
+  }
 }
