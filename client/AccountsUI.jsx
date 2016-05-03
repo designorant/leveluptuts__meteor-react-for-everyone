@@ -15,5 +15,3 @@ export default class AccountsUI extends Component {
     return <span ref="container" />
   }
 }
-
-export default AccountsUI;
