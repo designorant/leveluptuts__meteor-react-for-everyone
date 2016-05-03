@@ -3,7 +3,7 @@ Meteor.methods({
     Resolutions.insert({
       text: resolution,
       complete: false,
-      createdAt: new Date()
+      createdAt: new Date(),
     });
   }
 });

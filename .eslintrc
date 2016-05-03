@@ -29,5 +29,8 @@
     "import/no-unresolved": [
       2, { "ignore": ["^meteor/"] }
     ]
+  },
+  "globals": {
+    "FlowRouter"
   }
 }
