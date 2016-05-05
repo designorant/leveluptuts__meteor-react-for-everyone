@@ -29,7 +29,14 @@ export default class ResolutionsWrapper extends TrackerReact(React.Component) {
 
   render() {
     return (
-      <div>
+      <ReactCSSTransitionGroup
+        component='div'
+        transitionName='route'
+        transitionEnterTimeout={600}
+        transitionAppearTimeout={600}
+        transitionLeaveTimeout={400}
+        transitionAppear={true}
+      >
         <h1>My Resolutions</h1>
         <ResolutionsForm />
         <ReactCSSTransitionGroup
@@ -43,7 +50,7 @@ export default class ResolutionsWrapper extends TrackerReact(React.Component) {
             return <ResolutionSingle key={resolution._id} resolution={resolution} />
           })}
         </ReactCSSTransitionGroup>
-      </div>
+      </ReactCSSTransitionGroup>
     );
   }
 
